@@ -4,11 +4,10 @@ import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className=" mx-auto bg-gradient-to-b from-orange-50 to-orange-200">
       <HrContacts />
     </div>
   );
 };
 
 export default App;
-;
