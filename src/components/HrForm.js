@@ -40,14 +40,15 @@ const HrForm = ({ addHr, updateHr, editHr, setEditHr }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
-      <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email" required />
-      <input type="text" name="contact" value={form.contact} onChange={handleChange} placeholder="Contact" required />
-      <input type="text" name="post" value={form.post} onChange={handleChange} placeholder="Post" required />
-      <input type="text" name="alternateContact" value={form.alternateContact} onChange={handleChange} placeholder="Alternate Contact" />
-      <button type="submit">{form.id ? 'Update HR' : 'Add HR'}</button>
-      {form.id && <button type="button" onClick={() => setEditHr(null)}>Cancel</button>}
+    <form className=' mx-40' onSubmit={handleSubmit} >
+      <input className="border-slate-500 border rounded-2xl pl-5" type="text" name="name" value={form.name} onChange={handleChange} placeholder="Name"  required />
+      <input className="border-slate-500 border rounded-2xl pl-5" type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email" required />
+      <input className="border-slate-500 border rounded-2xl pl-5" type="text" name="contact" value={form.contact} onChange={handleChange} placeholder="Contact" required />
+      <input className="border-slate-500 border rounded-2xl pl-5" type="text" name="post" value={form.post} onChange={handleChange} placeholder="Post" required />
+      <input className="border-slate-500 border rounded-2xl pl-5" type="text" name="alternateContact" value={form.alternateContact} onChange={handleChange} placeholder="Alternate Contact" />
+      <div className='flex'>
+      <button className='border-slate-500 border rounded-xl m-5 text-xl' type="submit">{form.id ? 'Update HR' : 'Add HR'}</button>
+      {form.id && <button type="button" onClick={() => setEditHr(null)}>Cancel</button>}</div>
     </form>
   );
 };
