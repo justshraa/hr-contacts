@@ -25,19 +25,28 @@ const HrContacts = () => {
   const companies = ['Company A', 'Company B', 'Company C']; // Mock data for companies
 
   return (
-    <div>
-      <h1>HR Contacts</h1>
-      <select onChange={(e) => setSelectedCompany(e.target.value)} value={selectedCompany}>
-        <option value="">Select a company</option>
-        {companies.map((company, index) => (
-          <option key={index} value={company}>{company}</option>
-        ))}
-      </select>
-      {selectedCompany && (
+    <div> 
+        <div className='  bg-slate-400 bg'>
+            <h1 className='text-5xl text-white font-bold py-8 text-center tracking-widest font-mono'>
+                HR CONTACTS
+            </h1>
+        </div>
+        <div className=' justify-center mt-8 m-5 mx-40'>
+            <select className='border-slate-500 border rounded-2xl px-5 pr-10' onChange={(e) => setSelectedCompany(e.target.value)} value={selectedCompany}>
+            <option value="">Select a company</option>
+            {companies.map((company, index) => (
+            <option key={index} value={company}>{company}</option>
+            ))}
+            </select>
+        </div>
+        {selectedCompany && (
         <>
-          <HrForm addHr={addHr} updateHr={updateHr} editHr={editHr} setEditHr={setEditHr} />
-          <HrList hrContacts={hrContacts} deleteHr={deleteHr} setEditHr={setEditHr} />
+            <div className='m-5 p-4 '>
+                <HrForm addHr={addHr} updateHr={updateHr} editHr={editHr} setEditHr={setEditHr} />
+                <HrList hrContacts={hrContacts} deleteHr={deleteHr} setEditHr={setEditHr} />
+            </div>
         </>
+        
       )}
     </div>
   );
